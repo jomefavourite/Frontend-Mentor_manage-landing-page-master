@@ -1,0 +1,96 @@
+$desktop: 1000px;
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@include desktop() {
+  .header {
+    &__img--main {
+      order: 2;
+      flex: 3;
+      // width: 100%;
+      // max-width: 0px;
+
+      .header__img {
+        margin-top: 0;
+        // width: 100%;
+        max-width: 600px;
+      }
+    }
+
+    &__Nav {
+      display: block;
+
+      position: absolute !important;
+      top: -65px;
+      width: 100%;
+      background: none;
+      padding: 3em 2em;
+      box-shadow: none;
+      border-radius: 0;
+      z-index: 100;
+      opacity: 1;
+      // pointer-events: fill;
+
+      nav {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+
+        ul {
+          // position: absolute;
+          // left: 30%;
+          margin-left: auto;
+          margin-right: -65px;
+          display: flex;
+          // justify-content: flex-start;
+          align-items: center;
+          // margin: 0 0 0 20%;
+          // transform: translateX(10%);
+        }
+
+        li {
+          display: block;
+          margin-left: 20px;
+        }
+
+        li + li {
+          margin-top: 0;
+        }
+
+        button {
+          margin: 0 0 0 0;
+          margin: 0 0 0 auto;
+        }
+      }
+    }
+
+    .hamburger {
+      display: none;
+    }
+  }
+
+  .main {
+    &__heading {
+      &--style {
+        background: none;
+        span {
+          position: absolute;
+          display: block;
+          left: -95px;
+        }
+
+        span + h4 {
+          padding: 0.6rem 0;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .footer {
+  }
+}

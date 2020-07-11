@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam:ital,wght@0,400;0,500;0,600;0,700;1,600&display=swap');
+
+$colors: (
+  brightRed: hsl(12, 88%, 59%),
+  darkBlue: hsl(228, 39%, 23%),
+  darkGrayishBlue: hsl(227, 12%, 61%),
+  veryDarkBlue: hsl(233, 12%, 13%),
+  veryPaleRed: hsl(13, 100%, 96%),
+  veryLightGray: hsl(0, 0%, 98%),
+  white: #fff
+);
+
+@function color($name) {
+  @return map-get($map: $colors, $key: $name);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle_show {
+  opacity: 1 !important;
+  // pointer-events: visibleFill;
+}
+
+body {
+  background: url("../images/bg-tablet-pattern.svg") color(veryLightGray);
+  background-position: 50px top;
+  background-repeat: repeat(2);
+  font-family: 'Be Vietnam', sans-serif;
+}
+
+button {
+  display: block;
+  width: 11em;
+  padding: 1rem 2rem;
+  border-radius: 40px;
+  border: none;
+  background: color(brightRed);
+  color: color(veryLightGray);
+  font-weight: 700;
+  margin: 0 auto;
+  box-shadow: 0 10px 10px -8px hsla(0, 0%, 0%, 0.192),
+    0 10px 10px hsla(12, 88%, 59%, 0.507);
+  cursor: pointer;
+}
+
+button:hover {
+  background: lighten(color(brightRed), $amount: 10%);
+}
+
+li,
+a {
+  list-style: none;
+  text-decoration: none;
+  color: color(veryDarkBlue);
+  font-weight: 700;
+  text-align: center;
+}
+
+li a:hover {
+  color: color(brightRed);
+}
+
+li + li {
+  margin-top: 2rem;
+}
+
+p {
+  line-height: 1.8;
+  color: color(darkBlue);
+}
+
+.header {
+  background-position: center center;
+
+  &__intro {
+    position: relative;
+    margin-top: 3rem;
+
+    .hamburger {
+      cursor: pointer;
+      z-index: 100;
+
+      span {
+        display: block;
+        width: 25px;
+        height: 4px;
+        background: color(darkBlue);
+        transition: 0.4s;
+      }
+
+      span + span {
+        margin-top: 3px;
+      }
+    }
+
+    .change .bar1 {
+      transform: rotate(-45deg) translate(-3px, 2px);
+    }
+  
+    .change .bar2 {opacity: 0;}
+  
+    .change .bar3 {
+      transform: rotate(45deg) translate(-8px, -8px);
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    margin: 3em auto;
+    max-width: 440px;
+  }
+
+  &__main {
+    h1,
+    p {
+      text-align: center;
+    }
+  }
+
+  &__Nav {
+    position: absolute;
+    top: 4em;
+    width: 100%;
+    background: color(white);
+    padding: 3em 2em;
+    box-shadow: 0 0px 10px rgba(128, 128, 128, 0.493);
+    border-radius: 5px;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: fill;
+
+    button {
+      display: none;
+    }
+
+    button:hover {
+      background: lighten(color(brightRed), $amount: 10%);
+    }
+  }
+
+  .overlay {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      hsla(227, 12%, 61%, 0.239),
+      hsla(233, 12%, 13%, 0.698)
+    );
+    z-index: 20;
+  }
+
+  button {
+    margin: 2em auto 6em;
+  }
+}
+
+.main {
+  .flex2 {
+    display: flex;
+    align-items: center;
+
+    > h4 {
+      margin-left: 1rem;
+    }
+  }
+
+  &__content {
+    text-align: center;
+    margin-bottom: 3em;
+
+    p {
+      margin: 1em 0;
+    }
+  }
+
+  &__heading {
+    &--style {
+      position: relative;
+      background: color(veryPaleRed);
+      span {
+        padding: 0.6em 2em;
+        background: color(brightRed);
+        text-align: center;
+        border-radius: 30px;
+        color: color(white);
+      }
+    }
+
+    p {
+      margin-top: 0.6em;
+    }
+  }
+
+  &__heading + &__heading {
+    margin-top: 3em;
+  }
+
+  &__slider {
+    text-align: center;
+    padding: 3em 0 2.5em;
+
+    > h2 {
+      margin-bottom: 5em;
+    }
+
+    &__content {
+      position: relative;
+      padding: 5em 2em;
+      background: lighten(hsla(227, 12%, 61%, 0.904), 35%);
+
+      img {
+        position: absolute;
+        top: -3em;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+      }
+
+      label {
+        font-weight: bold;
+      }
+    }
+
+    &__content + &__content {
+      margin-bottom: 4em;
+    }
+
+    &__content:nth-child(2) {
+      margin-top: 4em;
+    }
+  }
+
+  &__card {
+    background: color(brightRed);
+    padding: 5em 0;
+    color: #fff;
+
+    h2 {
+      text-align: center;
+      font-size: 2.2em;
+      line-height: 1.5;
+    }
+
+    button {
+      background: color(veryPaleRed);
+      color: color(brightRed);
+      margin-top: 1rem;
+    }
+
+    button:hover {
+      color: lighten(color(brightRed), $amount: 10%);
+    }
+  }
+}
+
+.footer {
+  position: relative;
+  background: color(veryDarkBlue);
+  color: color(white);
+  padding: 3em 0 2em;
+
+  .form {
+    p {
+      text-align: center;
+      color: red;
+    }
+  }
+
+  .flex3 {
+    display: flex;
+    justify-content: center;
+    
+    div {
+      display: flex;
+      align-items: center;
+      max-width: 400px;
+      margin: 0 auto;
+      
+    }
+
+    input {
+      font-family: 'Be Vietnam', sans-serif;
+    }
+
+    button {
+      margin: 0 0 0 10px;
+    }
+  }
+
+  .red {
+    color: red;
+  }
+
+  .desktop__logo {
+    display: none;
+  }
+
+  input {
+    padding: 1rem;
+    border-radius: 40px;
+    border: none;
+    width: 70%;
+    max-width: 280px;
+  }
+
+  ::placeholder {
+    font-family: 'Be Vietnam', sans-serif;
+  }
+
+  button {
+    width: 6em;
+  }
+
+  li,
+  a {
+    text-align: left;
+    color: #ffff;
+  }
+
+  .flex4 {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: 3em auto;
+  }
+
+  &__icon {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      width: 35px;
+    }
+
+    img:hover {
+      fill: red;
+      transform: scale(1.2);
+    }
+  }
+
+  .logo {
+    text-align: center;
+    margin: 2em 0;
+  }
+
+  p {
+    color: #fff;
+    text-align: center;
+  }
+}
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  text-align: center;
+  color: #fff;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@import "medium";
+@import "desktop";

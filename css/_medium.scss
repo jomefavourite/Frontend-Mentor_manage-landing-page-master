@@ -1,0 +1,249 @@
+$medium: 700px;
+
+@mixin medium {
+  @media (min-width: #{$medium}) {
+    @content;
+  }
+}
+
+@include medium() {
+  .header {
+    &__desktop {
+      display: flex;
+      margin-top: 5em;
+    }
+
+    &__main {
+      p {
+        margin-top: 1em;
+      }
+    }
+
+    &__img--main {
+      order: 2;
+      flex: 3;
+
+      .header__img {
+        margin-top: 0;
+        // width: 100%;
+        max-width: 700px;
+      }
+    }
+
+    &__Nav {
+      // display:  block !important;
+
+      // position: absolute !important;
+      // top: -65px;
+      // width: 100%;
+      // background: none;
+      // padding: 3em 2em;
+      // box-shadow: none;
+      // border-radius: 0;
+      // z-index: 100;
+      // opacity: 1;
+      // pointer-events: fill;
+
+      position: absolute;
+      top: 4em;
+      width: 100%;
+      background: color(white);
+      padding: 3em 2em;
+      box-shadow: 0 0px 10px rgba(128, 128, 128, 0.493);
+      border-radius: 5px;
+      z-index: 100;
+      opacity: 0;
+      // pointer-events: none;
+
+      nav {
+        display: flex;
+        flex-direction: column;
+
+        ul {
+          // display: flex;
+          // justify-content: flex-start;
+          // align-items: center;
+          // margin: 0 0 0 40px;
+        }
+
+        li + li {
+          margin-top: 2rem;
+        }
+
+        li {
+          // display: none;
+          // margin-left: 1em;
+        }
+      }
+
+      button {
+        display: block;
+        width: 11em;
+        padding: 1rem 2rem;
+        border-radius: 40px;
+        border: none;
+        background: color(brightRed);
+        color: color(veryLightGray);
+        font-weight: 700;
+        // margin: 0 30px 0 auto;
+        margin: 3em auto 0;
+      }
+    }
+
+    .hamburger {
+      // display: none;
+      margin-top: -10px;
+    }
+
+    &__main {
+      order: 1;
+      text-align: left;
+      flex: 2;
+
+      h1,
+      p {
+        text-align: left;
+        max-width: 385px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      button {
+        margin: 2em 0;
+      }
+    }
+  }
+
+  .main {
+    &__content {
+      margin-right: 1em;
+      max-width: 340px;
+    }
+
+    &__desktop {
+      display: flex;
+
+      h2,
+      p {
+        text-align: left;
+      }
+
+      &--section {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-content: flex-end;
+        margin: 0 0 0 auto;
+        max-width: 460px;
+      }
+
+      &--card {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        // opacity: 0.8;
+
+        h2 {
+          // flex: 1;
+          text-align: left;
+          max-width: 490px;
+        }
+
+        button {
+          // flex: 2;
+          margin: 8% 0 0 auto;
+          // padding: 1px;
+        }
+      }
+    }
+
+    &__slider {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      &__content:nth-child(2) {
+        margin-top: 0;
+      }
+
+      &__content:nth-child(1) {
+        margin-bottom: 4em;
+      }
+
+      &--slide {
+        // position: absolute;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        // gap: 20px;
+
+        section {
+          width: 600px;
+          // margin: 1px;
+        }
+      }
+    }
+  }
+
+  .footer {
+    .desktop__flex {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1.5fr;
+      grid-template-rows: repeat(1fr, 2);
+      grid-template-areas:
+        "desktop__logo flex4 flex3"
+        "footer__icon  flex4 p";
+    }
+
+    .logo {
+      display: none;
+    }
+
+    .desktop__logo {
+      display: block;
+      grid-area: desktop__logo;
+    }
+
+    &__icon {
+      grid-area: footer__icon;
+      margin: auto 0 0 0;
+    }
+
+    .form {
+      grid-area: flex3;
+
+      button {
+        margin: 0;
+      }
+
+      p {
+        text-align: left;
+        padding-left: 15px;
+      }
+    }
+
+    .flex3 {
+      display: flex;
+      position: relative;
+
+      input {
+        width: 100%;
+        max-width: 380px;
+      }
+
+      
+    }
+
+    .flex4 {
+      grid-area: flex4;
+      margin: 0 auto;
+    }
+
+    p {
+      grid-area: p;
+      margin: auto 0 0 0;
+      text-align: right;
+    }
+  }
+}
