@@ -13,6 +13,7 @@ ham.addEventListener('click', () => {
     overlay.classList.toggle('toggle_show');
     nav.classList.toggle('toggle_show')
     ham.classList.toggle('change')
+    document.body.classList.toggle('overflowY')
 })
 
 button.addEventListener('click', (e) => {
@@ -24,7 +25,6 @@ button.addEventListener('click', (e) => {
         } 
         else {
             alertt.textContent = `Please insert a valid email`
-            // input.value.classList.add('red')
         }
     } else {
         alertt.textContent = ""

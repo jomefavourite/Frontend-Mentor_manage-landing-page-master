@@ -39,9 +39,11 @@ $colors: (
 
 body {
   background: url("../images/bg-tablet-pattern.svg") color(veryLightGray);
-  background-position: 50px top;
-  background-repeat: repeat(2);
   font-family: 'Be Vietnam', sans-serif;
+  background-repeat: no-repeat;
+  background-position: 50px -100px;
+  background-size: 500px;
+  overflow-x: hidden;
 }
 
 button {
@@ -83,6 +85,10 @@ li + li {
 p {
   line-height: 1.8;
   color: color(darkBlue);
+}
+
+.overflowY {
+  overflow-y: hidden
 }
 
 .header {
@@ -176,6 +182,8 @@ p {
 }
 
 .main {
+  position: relative;
+
   .flex2 {
     display: flex;
     align-items: center;
@@ -272,6 +280,19 @@ p {
       color: lighten(color(brightRed), $amount: 10%);
     }
   }
+
+  .main__overlay {
+    position: absolute;
+    top: -370px;
+    right: -220px;
+    background: url("../images/bg-tablet-pattern-copy.svg") no-repeat;
+    width: 100%;
+    height: 70%;
+    z-index: -1000;
+    background-size: 500px;
+    pointer-events: none;
+  }
+
 }
 
 .footer {

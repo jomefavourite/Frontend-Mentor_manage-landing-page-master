@@ -1,8 +1,19 @@
 $medium: 700px;
+@mixin img {
+  @media (min-width: 533px) {
+    @content;
+  }
+}
 
 @mixin medium {
   @media (min-width: #{$medium}) {
     @content;
+  }
+}
+
+@include img {
+  body {
+    background-position: right -100px;
   }
 }
 
@@ -25,24 +36,11 @@ $medium: 700px;
 
       .header__img {
         margin-top: 0;
-        // width: 100%;
         max-width: 700px;
       }
     }
 
     &__Nav {
-      // display:  block !important;
-
-      // position: absolute !important;
-      // top: -65px;
-      // width: 100%;
-      // background: none;
-      // padding: 3em 2em;
-      // box-shadow: none;
-      // border-radius: 0;
-      // z-index: 100;
-      // opacity: 1;
-      // pointer-events: fill;
 
       position: absolute;
       top: 4em;
@@ -156,6 +154,14 @@ $medium: 700px;
           // padding: 1px;
         }
       }
+
+    }
+    .main__overlay {
+      position: absolute;
+      top: 300px;
+      left: -220px;
+      z-index: -1000;
+      background-size: 500px;
     }
 
     &__slider {
@@ -187,6 +193,7 @@ $medium: 700px;
   }
 
   .footer {
+    height: 100%;
     .desktop__flex {
       display: grid;
       grid-template-columns: 1fr 2fr 1.5fr;
@@ -232,7 +239,6 @@ $medium: 700px;
         max-width: 380px;
       }
 
-      
     }
 
     .flex4 {

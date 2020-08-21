@@ -7,6 +7,14 @@ $desktop: 1000px;
 }
 
 @include desktop() {
+  body {
+    background-size: 600px;
+  }
+
+  .overlay {
+    display: none;
+  }
+
   .header {
     &__img--main {
       order: 2;
@@ -89,8 +97,10 @@ $desktop: 1000px;
         }
       }
     }
-  }
 
-  .footer {
+    .main__overlay {
+      background-size: 600px;
+    }
+
   }
 }
