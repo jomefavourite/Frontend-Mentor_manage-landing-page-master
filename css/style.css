@@ -30,9 +30,11 @@
 
 body {
   background: url("../images/bg-tablet-pattern.svg") #fafafa;
-  background-position: 50px top;
-  background-repeat: repeat(2);
   font-family: 'Be Vietnam', sans-serif;
+  background-repeat: no-repeat;
+  background-position: 50px -100px;
+  background-size: 500px;
+  overflow-x: hidden;
 }
 
 button {
@@ -74,6 +76,10 @@ li + li {
 p {
   line-height: 1.8;
   color: #242d52;
+}
+
+.overflowY {
+  overflow-y: hidden;
 }
 
 .header {
@@ -166,6 +172,10 @@ p {
 
 .header button {
   margin: 2em auto 6em;
+}
+
+.main {
+  position: relative;
 }
 
 .main .flex2 {
@@ -267,6 +277,18 @@ p {
 
 .main__card button:hover {
   color: #f6866a;
+}
+
+.main .main__overlay {
+  position: absolute;
+  top: -370px;
+  right: -220px;
+  background: url("../images/bg-tablet-pattern-copy.svg") no-repeat;
+  width: 100%;
+  height: 70%;
+  z-index: -1000;
+  background-size: 500px;
+  pointer-events: none;
 }
 
 .footer {
@@ -411,6 +433,12 @@ p {
   color: #3e52a3;
 }
 
+@media (min-width: 533px) {
+  body {
+    background-position: right -100px;
+  }
+}
+
 @media (min-width: 700px) {
   .header__desktop {
     display: -webkit-box;
@@ -533,6 +561,13 @@ p {
   .main__desktop--card button {
     margin: 8% 0 0 auto;
   }
+  .main .main__overlay {
+    position: absolute;
+    top: 300px;
+    left: -220px;
+    z-index: -1000;
+    background-size: 500px;
+  }
   .main__slider {
     position: relative;
     width: 100%;
@@ -557,6 +592,9 @@ p {
   .main__slider--slide section {
     width: 600px;
   }
+  .footer {
+    height: 100%;
+  }
   .footer .desktop__flex {
     display: -ms-grid;
     display: grid;
@@ -564,7 +602,8 @@ p {
         grid-template-columns: 1fr 2fr 1.5fr;
     -ms-grid-rows: (2)[1fr];
         grid-template-rows: repeat(1fr, 2);
-        grid-template-areas: "desktop__logo flex4 flex3" "footer__icon  flex4 p";
+        grid-template-areas: "desktop__logo flex4 flex3"
+ "footer__icon  flex4 p";
   }
   .footer .logo {
     display: none;
@@ -620,6 +659,12 @@ p {
 }
 
 @media (min-width: 1000px) {
+  body {
+    background-size: 600px;
+  }
+  .overlay {
+    display: none;
+  }
   .header__img--main {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
@@ -690,6 +735,9 @@ p {
   .main__heading--style span + h4 {
     padding: 0.6rem 0;
     margin: 0;
+  }
+  .main .main__overlay {
+    background-size: 600px;
   }
 }
 /*# sourceMappingURL=style.css.map */
