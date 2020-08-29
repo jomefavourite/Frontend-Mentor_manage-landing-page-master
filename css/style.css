@@ -30,7 +30,7 @@
 
 body {
   background: url("../images/bg-tablet-pattern.svg") #fafafa;
-  font-family: 'Be Vietnam', sans-serif;
+  font-family: "Be Vietnam", sans-serif;
   background-repeat: no-repeat;
   background-position: 50px -100px;
   background-size: 500px;
@@ -227,13 +227,14 @@ p {
 }
 
 .main__slider > h2 {
-  margin-bottom: 5em;
+  margin-bottom: 1em;
 }
 
 .main__slider__content {
   position: relative;
   padding: 5em 2em;
   background: rgba(244, 244, 246, 0.904);
+  margin: 3em 0 2em;
 }
 
 .main__slider__content img {
@@ -249,12 +250,8 @@ p {
   font-weight: bold;
 }
 
-.main__slider__content + .main__slider__content {
-  margin-bottom: 4em;
-}
-
-.main__slider__content:nth-child(2) {
-  margin-top: 4em;
+.main__slider button {
+  margin-top: 2em;
 }
 
 .main__card {
@@ -324,7 +321,7 @@ p {
 }
 
 .footer .flex3 input {
-  font-family: 'Be Vietnam', sans-serif;
+  font-family: "Be Vietnam", sans-serif;
 }
 
 .footer .flex3 button {
@@ -348,19 +345,19 @@ p {
 }
 
 .footer ::-webkit-input-placeholder {
-  font-family: 'Be Vietnam', sans-serif;
+  font-family: "Be Vietnam", sans-serif;
 }
 
 .footer :-ms-input-placeholder {
-  font-family: 'Be Vietnam', sans-serif;
+  font-family: "Be Vietnam", sans-serif;
 }
 
 .footer ::-ms-input-placeholder {
-  font-family: 'Be Vietnam', sans-serif;
+  font-family: "Be Vietnam", sans-serif;
 }
 
 .footer ::placeholder {
-  font-family: 'Be Vietnam', sans-serif;
+  font-family: "Be Vietnam", sans-serif;
 }
 
 .footer button {
@@ -568,29 +565,12 @@ p {
     z-index: -1000;
     background-size: 500px;
   }
-  .main__slider {
-    position: relative;
-    width: 100%;
-    height: 100%;
+  .main__slider__content {
+    margin: 3em 0 2em;
   }
-  .main__slider__content:nth-child(2) {
-    margin-top: 0;
-  }
-  .main__slider__content:nth-child(1) {
-    margin-bottom: 4em;
-  }
-  .main__slider--slide {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .main__slider--slide section {
-    width: 600px;
+  .main__slider__content p {
+    margin: 0 auto;
+    max-width: 600px;
   }
   .footer {
     height: 100%;
